@@ -1,0 +1,46 @@
+﻿@model IEnumerable<KiemTra.Models.HocPhan>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaHp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenHp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTinChi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenHp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTinChi)
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-id="@item.MaHp">Đăng ký</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

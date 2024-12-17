@@ -1,0 +1,40 @@
+﻿@model KiemTra.Models.HocPhan
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>HocPhan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaHp" />
+            <div class="form-group">
+                <label asp-for="TenHp" class="control-label"></label>
+                <input asp-for="TenHp" class="form-control" />
+                <span asp-validation-for="TenHp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoTinChi" class="control-label"></label>
+                <input asp-for="SoTinChi" class="form-control" />
+                <span asp-validation-for="SoTinChi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
